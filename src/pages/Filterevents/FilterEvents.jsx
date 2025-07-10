@@ -1,11 +1,25 @@
+import { useCallback, useState } from "react";
 import FilterBox from "../../components/FilterBox/FilterBox";
 import SearchEventList from "../../components/SearchEventList/SearchEventList";
-'./FilterEvents.css;'
+import Navigation from "../../components/Navigation/Navigation"
+import './FilterEvents.css';
 const FilterEvents = ()=>{
+   const [monthYear,setMonthYear]=useState({
+    selectedMonth:null,
+    selectedYear:null
+   })
+   const getMonthYear = useCallback((selectedMonth,selectedYear)=>{
+      setMonthYear({selectedYear,selectedMonth})
+   },[])
+   
     return(
-        <div>
-            <h1>Filter Events</h1>
+      <div>
+         <Navigation />
+         <div className="find-events-wrapper">
+          <FilterBox getMonthYear={getMonthYear}/>
+          <SearchEventList monthYear={monthYear}/>
         </div>
+      </div>
     )
-}
-export default FilterEvents;
+  }
+  export default FilterEvents;

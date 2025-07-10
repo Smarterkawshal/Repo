@@ -1,0 +1,28 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, sans-serif; 
+
+}
+
+.nav-bar {
+    background-color: #8587cf;
+    color: white;
+    padding: 10px;
+}
+
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+}
+
+.nav-bar ul li{
+    list-style-type: none;
+    margin: 4px;
+    padding: 2px, 4px;
+    display: flex;
+    
+}
